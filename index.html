@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobramos PH - Gestión de Cartera en Propiedad Horizontal</title>
+    <meta name="description" content="Cobramos PH: Especialistas en recuperación de cartera, liquidez inmediata y soluciones de gestión financiera para edificios y conjuntos residenciales.">
+    
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ==========================================================================
+           RESET Y VARIABLES CORPORATIVAS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --navy: #0F2B5C;
+            --navy-dark: #0A1D3F;
+            --navy-light: #163C7E;
+            --gold: #D49A2B;
+            --gold-hover: #B88322;
+            --gold-light: #FDF7EC;
+            --green: #28A745;
+            --whatsapp-green: #25D366;
+            --gray-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --text-dark: #2B303A;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --border-light: #ECEEF2;
+            --shadow-sm: 0 2px 8px rgba(15, 43, 92, 0.06);
+            --shadow-md: 0 8px 24px rgba(15, 43, 92, 0.08);
+            --shadow-lg: 0 16px 36px rgba(15, 43, 92, 0.12);
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 50px auto;
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--gold-light);
+            color: var(--gold-hover);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(212, 154, 43, 0.3);
+        }
+
+        .badge-tag i {
+            color: var(--gold);
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           1. TOPBAR & HEADER STICKY
+           ========================================================================== */
+        .topbar {
+            background-color: var(--navy);
+            color: #FFFFFF;
+            padding: 9px 30px;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #E2E8F0;
+        }
+
+        .topbar-left i {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .topbar-right a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #E2E8F0;
+            transition: color 0.2s ease;
+        }
+
+        .topbar-right a i {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .topbar-right a:hover {
+            color: var(--gold);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 16px rgba(15, 43, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--navy);
+        }
+
+        /* Botones CTA */
+        .cta-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--navy);
+            color: var(--navy);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--navy);
+            color: #FFFFFF;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(212, 154, 43, 0.35);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(212, 154, 43, 0.45);
+        }
+
+        /* ==========================================================================
+           2. HERO SECTION (FULL-WIDTH HERO BANNER)
+           ========================================================================== */
+        .hero {
+            position: relative;
+            padding: 105px 0 115px 0;
+            background-image: linear-gradient(90deg, rgba(10, 29, 63, 0.94) 0%, rgba(15, 43, 92, 0.86) 55%, rgba(15, 43, 92, 0.68) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: #FFFFFF;
+            overflow: hidden;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 85% 20%, rgba(212, 154, 43, 0.16), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+        }
+
+        .hero .badge-tag {
+            background-color: rgba(212, 154, 43, 0.22);
+            color: #F8E7C9;
+            border: 1px solid rgba(212, 154, 43, 0.45);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero .badge-tag i {
+            color: var(--gold);
+        }
+
+        .hero-content h1 {
+            font-size: 46px;
+            color: #FFFFFF;
+            line-height: 1.18;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #E2E8F0;
+            margin-bottom: 34px;
+            line-height: 1.6;
+            max-width: 680px;
+        }
+
+        .hero-btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-btn-secondary:hover {
+            background-color: #FFFFFF;
+            color: var(--navy);
+            border-color: #FFFFFF;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .hero-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #F1F5F9;
+        }
+
+        .hero-badge-item i {
+            color: var(--green);
+            font-size: 15px;
+        }
+
+        /* ==========================================================================
+           3. SECCIÓN: SU EDIFICIO TIENE CARTERA. NOSOTROS TENEMOS UN PLAN
+           ========================================================================== */
+        .problema-section {
+            background-color: var(--white);
+        }
+
+        .problema-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .problema-card {
+            background-color: var(--gray-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .problema-card:hover {
+            transform: translateY(-5px);
+            background-color: #FFFFFF;
+            box-shadow: var(--shadow-md);
+            border-color: rgba(15, 43, 92, 0.25);
+        }
+
+        .problema-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background-color: var(--gold-light);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .problema-card:hover .problema-icon {
+            background-color: var(--navy);
+            color: #FFFFFF;
+        }
+
+        .problema-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .problema-card p {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .problema-tag {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold-hover);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .problema-tag i {
+            font-size: 11px;
+        }
+
+        /* ==========================================================================
+           4. SECCIÓN: CÓMO FUNCIONA (5 PASOS)
+           ========================================================================== */
+        .como-funciona-section {
+            background-color: var(--gray-bg);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .step-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--gold);
+        }
+
+        .step-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--gold);
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px auto;
+            box-shadow: 0 4px 10px rgba(212, 154, 43, 0.35);
+        }
+
+        .step-card h3 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           5. SECCIÓN: SOLUCIONES Y MODELOS
+           ========================================================================== */
+        .soluciones-section {
+            background-color: var(--white);
+        }
+
+        .soluciones-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .solucion-card {
+            background-color: var(--white);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .solucion-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--navy);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .solucion-card.featured {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
+        }
+
+        .card-ribbon {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--gold);
+            color: #FFFFFF;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(212, 154, 43, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .solucion-header {
+            margin-bottom: 24px;
+        }
+
+        .solucion-category {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold-hover);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .solucion-header h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .solucion-phrase {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy-dark);
+            line-height: 1.45;
+            background-color: var(--gray-bg);
+            padding: 12px 14px;
+            border-radius: 8px;
+            border-left: 4px solid var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .solucion-card.featured .solucion-phrase {
+            border-left-color: var(--gold);
+            background-color: var(--gold-light);
+        }
+
+        .solucion-features {
+            list-style: none;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .solucion-features li {
+            font-size: 14px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.45;
+        }
+
+        .solucion-features li i.check-icon {
+            color: var(--green);
+            font-size: 14px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .solucion-footer {
+            margin-top: auto;
+        }
+
+        .solucion-footer .btn {
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           6. BANNER DE IMPACTO / BENEFICIOS
+           ======================================================================== */
+        .impact-banner {
+            background-color: var(--navy);
+            color: #FFFFFF;
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-banner::after {
+            content: '';
+            position: absolute;
+            right: -100px;
+            top: -100px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 154, 43, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .impact-content {
+            text-align: center;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .impact-banner h2 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .impact-banner h2 span {
+            color: var(--gold);
+        }
+
+        .impact-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 30px;
+            text-align: left;
+            margin-top: 36px;
+        }
+
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #E2E8F0;
+        }
+
+        .impact-list li .check-circle {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: rgba(40, 167, 69, 0.2);
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+           7. MÓDULOS ESPECIALES (ADMINISTRADORES Y PROVEEDORES)
+           ========================================================================== */
+        .modulos-section {
+            background-color: var(--gray-bg);
+        }
+
+        .modulo-box {
+            background-color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .modulo-box.reverse {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .modulo-box h3 {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        .modulo-box h3 span {
+            color: var(--gold);
+        }
+
+        .modulo-box p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .modulo-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .modulo-checklist li {
+            font-size: 14.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .modulo-checklist li i {
+            color: var(--gold);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .modulo-card-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .modulo-card-visual .visual-icon {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .modulo-card-visual h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        .modulo-card-visual p {
+            font-size: 14px;
+            color: #CBD5E1;
+            margin-bottom: 0;
+        }
+
+        .nota-legal-box {
+            background-color: var(--white);
+            border-left: 4px solid var(--gold);
+            padding: 22px 26px;
+            border-radius: var(--radius-md);
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .nota-legal-box i {
+            color: var(--gold);
+            font-size: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .nota-legal-box strong {
+            color: var(--navy);
+        }
+
+        /* ==========================================================================
+           8. PREGUNTAS FRECUENTES (FAQ ACCORDION)
+           ========================================================================== */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background-color: var(--gray-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(15, 43, 92, 0.3);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            text-align: left;
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 14px;
+        }
+
+        .faq-question i.faq-chevron {
+            font-size: 14px;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 24px;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            background-color: #FFFFFF;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 320px;
+            padding: 0 24px 22px 24px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .faq-item.active .faq-question i.faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        /* ==========================================================================
+           9. FORMULARIO PRINCIPAL DE CONTACTO & FOOTER
+           ========================================================================== */
+        .contacto-section {
+            background-color: var(--gray-bg);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contacto-info {
+            padding-right: 20px;
+        }
+
+        .contacto-info h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .contacto-info p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .contacto-cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contacto-card-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+        }
+
+        .contacto-card-item:hover {
+            border-color: var(--gold);
+            transform: translateX(4px);
+        }
+
+        .contacto-card-item .icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background-color: var(--gold-light);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contacto-card-item .lbl {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .contacto-card-item .val {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .form-card {
+            background-color: #FFFFFF;
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-dark);
+            background-color: var(--gray-bg);
+            transition: border-color 0.2s, background-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--navy);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(15, 43, 92, 0.1);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        .form-feedback {
+            display: none;
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 8px;
+            background-color: var(--gold-light);
+            border: 1px solid var(--gold);
+            color: var(--navy);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Footer Corporativo */
+        footer {
+            background-color: var(--navy-dark);
+            color: #E2E8F0;
+            padding: 60px 0 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            background: #FFFFFF;
+            padding: 8px 14px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo img {
+            height: 38px;
+            display: block;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #CBD5E1;
+            font-size: 14px;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a i {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #94A3B8;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ==========================================================================
+           10. BOTÓN FLOTANTE DE WHATSAPP
+           ========================================================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: #FFFFFF;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 1000;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 26px rgba(37, 211, 102, 0.65);
+        }
+
+        .whatsapp-float i {
+            font-size: 32px;
+            color: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE MOBILE / TABLET
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 85px 0 95px 0;
+            }
+            .hero-content h1 {
+                font-size: 38px;
+            }
+            .problema-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .soluciones-grid {
+                grid-template-columns: 1fr;
+            }
+            .modulo-box, .modulo-box.reverse {
+                grid-template-columns: 1fr;
+                padding: 32px;
+            }
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .topbar {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                padding: 8px 15px;
+            }
+            .topbar-left, .topbar-right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            header {
+                flex-direction: column;
+                gap: 16px;
+                padding: 14px 20px;
+                border-bottom: none;
+                box-shadow: none;
+            }
+            header::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 30px;
+                background: linear-gradient(to bottom, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0) 100%);
+                pointer-events: none;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+            .cta-group {
+                width: 100%;
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .hero {
+                padding: 65px 0 75px 0;
+                background-image: linear-gradient(180deg, rgba(10, 29, 63, 0.96) 0%, rgba(15, 43, 92, 0.92) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+            }
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            .hero-badges {
+                gap: 12px;
+                flex-direction: column;
+            }
+            .problema-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .impact-list {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: span 1;
+            }
+            .form-card {
+                padding: 24px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================================
+         1. TOPBAR & HEADER STICKY
+         ======================================================================== -->
+    <div class="topbar">
+        <div class="topbar-left">
+        </div>
+        <div class="topbar-right">
+            <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>+57 318 196 3751</span>
+            </a>
+            <a href="mailto:cartera@cobramosph.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>cartera@cobramosph.com</span>
+            </a>
+            <a href="https://instagram.com/cobramosphco" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@cobramosphco</span>
+            </a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-wrap">
+            <a href="#inicio">
+                <img src="./assets/logo.jpg" alt="Cobramos PH - Gestión de Cartera en Propiedad Horizontal" class="logo" onerror="this.src='https://via.placeholder.com/180x50?text=Cobramos+PH'">
+            </a>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#como-funciona">Cómo Funciona</a>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#administradores">Administradores</a>
+            <a href="#proveedores">Proveedores</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="cta-group">
+            <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>CONTÁCTANOS</span>
+            </a>
+            <a href="#contacto" class="btn btn-gold">SOLICITAR DIAGNÓSTICO</a>
+        </div>
+    </header>
+
+    <!-- ========================================================================
+         2. HERO SECTION (FULL-WIDTH HERO BANNER)
+         ======================================================================== -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge-tag">
+                    <i class="fa-solid fa-building-shield"></i>
+                    <span>Gestión Profesional de Cartera</span>
+                </span>
+                <h1>La cartera de su copropiedad <span>no tiene por qué seguir creciendo.</span></h1>
+                <p>Recuperamos cartera. Generamos liquidez. Protegemos la operación de su edificio bajo una gestión transparente y profesional.</p>
+                <div class="cta-group">
+                    <a href="#contacto" class="btn btn-gold">SOLICITAR DIAGNÓSTICO DE CARTERA</a>
+                    <a href="#como-funciona" class="btn hero-btn-secondary">Conocer cómo funciona</a>
+                </div>
+                <div class="hero-badges">
+                    <div class="hero-badge-item">
+                        <i class="fa-solid fa-circle-check"></i> Cero costo inicial para la copropiedad
+                    </div>
+                    <div class="hero-badge-item">
+                        <i class="fa-solid fa-circle-check"></i> Cobranza técnica y especializada
+                    </div>
+                    <div class="hero-badge-item">
+                        <i class="fa-solid fa-circle-check"></i> Reportes transparentes en tiempo real
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         3. SECCIÓN: SU EDIFICIO TIENE CARTERA. NOSOTROS TENEMOS UN PLAN
+         ======================================================================== -->
+    <section class="section-padding problema-section" id="problema">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-tag">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Diagnóstico y Operación</span>
+                </span>
+                <h2 class="section-title">SU EDIFICIO TIENE CARTERA.<br>NOSOTROS TENEMOS UN PLAN.</h2>
+                <p class="section-subtitle">La morosidad no es solo una cifra contable: impacta directamente la seguridad, el mantenimiento y la convivencia pacífica de su copropiedad.</p>
+            </div>
+
+            <div class="problema-grid">
+                <!-- Card 1 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Flujo de Caja</h3>
+                        <p>Afectación de liquidez inmediata para cubrir las expensas y obligaciones mensuales fijas del edificio.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Impacto Operativo
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3>Mantenimiento</h3>
+                        <p>Deterioro paulatino de áreas comunes, parálisis en mantenimiento de ascensores, bombas hidráulicas y fachadas.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Conservación del Edificio
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Proveedores y Obligaciones</h3>
+                        <p>Retrasos en pagos de empresas de vigilancia, aseo y servicios públicos que ponen en riesgo la continuidad del servicio.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Seguridad y Operación
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                        <h3>Proyectos de Asamblea</h3>
+                        <p>Dificultad o imposibilidad para ejecutar obras de modernización e inversiones prioritarias aprobadas por los copropietarios.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Plan de Inversiones
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <h3>Capacidad Financiera</h3>
+                        <p>Afectación del patrimonio común y devaluación del precio comercial por metro cuadrado de cada apartamento.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Valorización Inmobiliaria
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="problema-card">
+                    <div>
+                        <div class="problema-icon">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3>Tranquilidad Administrativa</h3>
+                        <p>Conflictos entre vecinos y desgaste constante para la administración al tener que realizar gestiones de cobro directo.</p>
+                    </div>
+                    <div class="problema-tag">
+                        <i class="fa-solid fa-angle-right"></i> Convivencia Comunitaria
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         4. SECCIÓN: CÓMO FUNCIONA (5 PASOS)
+         ======================================================================== -->
+    <section class="section-padding como-funciona-section" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-tag">
+                    <i class="fa-solid fa-route"></i>
+                    <span>Ruta de Gestión</span>
+                </span>
+                <h2 class="section-title">¿CÓMO FUNCIONA?</h2>
+                <p class="section-subtitle">Un proceso estructurado, metódico y transparente en 5 etapas para sanear la cartera de su copropiedad.</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Paso 1 -->
+                <div class="step-card" style="padding: 0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: relative; height: 176px; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 29, 63, 0.7) 0%, rgba(15, 43, 92, 0.9) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <div class="step-badge" style="margin: 0 0 12px 0;">01</div>
+                            <h3 style="color: #FFFFFF; font-size: 18px; margin: 0; text-align: center;">DIAGNOSTICAMOS</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 24px; background-color: #FFFFFF; flex-grow: 1;">
+                        <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.5;">Conocemos el estado real y técnico de la cartera, segmentando saldos por antigüedad e histórico de pagos sin costo.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card" style="padding: 0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: relative; height: 176px; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 29, 63, 0.7) 0%, rgba(15, 43, 92, 0.9) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <div class="step-badge" style="margin: 0 0 12px 0;">02</div>
+                            <h3 style="color: #FFFFFF; font-size: 18px; margin: 0; text-align: center;">ORGANIZAMOS</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 24px; background-color: #FFFFFF; flex-grow: 1;">
+                        <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.5;">Clasificamos las obligaciones por antigüedad, prioridad y viabilidad legal, concertando la estrategia con la administración.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card" style="padding: 0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: relative; height: 176px; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 29, 63, 0.7) 0%, rgba(15, 43, 92, 0.9) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <div class="step-badge" style="margin: 0 0 12px 0;">03</div>
+                            <h3 style="color: #FFFFFF; font-size: 18px; margin: 0; text-align: center;">GESTIONAMOS</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 24px; background-color: #FFFFFF; flex-grow: 1;">
+                        <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.5;">Ejecutamos cobranza persuasiva, multicanal y prejurídica con mediación asertiva, protegiendo las relaciones comunitarias.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card" style="padding: 0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: relative; height: 176px; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 29, 63, 0.7) 0%, rgba(15, 43, 92, 0.9) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <div class="step-badge" style="margin: 0 0 12px 0;">04</div>
+                            <h3 style="color: #FFFFFF; font-size: 18px; margin: 0; text-align: center;">RECUPERAMOS</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 24px; background-color: #FFFFFF; flex-grow: 1;">
+                        <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.5;">Formalizamos acuerdos de pago sostenibles vinculantes. Los recursos ingresan de forma directa a la cuenta de la copropiedad.</p>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card" style="padding: 0; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="position: relative; height: 176px; overflow: hidden;">
+                        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 29, 63, 0.7) 0%, rgba(15, 43, 92, 0.9) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+                            <div class="step-badge" style="margin: 0 0 12px 0;">05</div>
+                            <h3 style="color: #FFFFFF; font-size: 18px; margin: 0; text-align: center;">REPORTAMOS</h3>
+                        </div>
+                    </div>
+                    <div style="padding: 24px; background-color: #FFFFFF; flex-grow: 1;">
+                        <p style="margin: 0; color: #475569; font-size: 14px; line-height: 1.5;">Entregamos indicadores, bitácoras y reportes periódicos detallados para el Consejo de Administración y la Asamblea.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         5. SECCIÓN: SOLUCIONES Y MODELOS
+         ======================================================================== -->
+    <section class="section-padding soluciones-section" id="soluciones">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-tag">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Modelos B2B</span>
+                </span>
+                <h2 class="section-title">¿CÓMO PODEMOS AYUDAR A SU COPROPIEDAD?</h2>
+                <p class="section-subtitle">Realizamos una <strong>adquisición de derechos económicos sobre el total de la cartera objeto del contrato</strong> y asumimos el <strong>100% del riesgo de recuperación</strong> mediante las siguientes alternativas.</p>
+            </div>
+
+            <div class="soluciones-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); max-width: 900px; margin: 0 auto;">
+                <!-- CARD 1 -->
+                <div class="solucion-card featured">
+                    <div class="card-ribbon">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Liquidez Inmediata</span>
+                    </div>
+                    <div>
+                        <div class="solucion-header">
+                            <span class="solucion-category">Modelo B2B</span>
+                            <h3>PLAN 10% | LIQUIDEZ</h3>
+                        </div>
+                        <div class="solucion-phrase">
+                            "Convierte tu cartera en flujo de caja."
+                        </div>
+                        <ul class="solucion-features">
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Concepto:</strong> Adquisición de derechos económicos. Giramos el valor correspondiente independientemente del pago (asumiendo el riesgo).</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Desglose:</strong> 10% Comisión Cobramos PH | 90% Giro a la copropiedad. Pagos los días 10 de cada mes (sobre cartera del mes anterior).</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Ejemplo ($44M):</strong> 10% Cobramos ($4.400.000) | 90% Giro directo ($39.600.000).</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Destacado:</strong> Usted recibe su dinero. Cobramos PH asume la gestión y el riesgo de recuperación.</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Soporte:</strong> La copropiedad debe entregar documentación para actuaciones jurídicas.</span></li>
+                        </ul>
+                    </div>
+                    <div class="solucion-footer">
+                        <a href="#contacto" class="btn btn-gold">SOLICITAR DIAGNÓSTICO DE CARTERA</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="solucion-card">
+                    <div>
+                        <div class="solucion-header">
+                            <span class="solucion-category">Modelo B2B</span>
+                            <h3>PLAN 5% + 1% | SERVICIOS</h3>
+                        </div>
+                        <div class="solucion-phrase">
+                            "Convierte tu cartera en servicios para tu copropiedad."
+                        </div>
+                        <ul class="solucion-features">
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Concepto:</strong> Adquisición de derechos económicos sobre la cartera. La contraprestación se materializa mediante canje de servicios.</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Desglose:</strong> 5% Comisión | 1% Fondo reserva copropiedad | 94% Canje de servicios asumidos al 100% por Cobramos PH.</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Ejemplo ($44M):</strong> 5% Cobramos ($2.200.000) | 1% Reserva ($440.000) | 94% Ejecución en servicios ($41.360.000).</span></li>
+                            <li><i class="fa-solid fa-circle-check check-icon"></i> <span><strong>Aclaración Explícita:</strong> El 94% NO es giro en efectivo, sino ejecución e inversión en servicios acordados (vigilancia, aseo, mantenimiento, seguros).</span></li>
+                        </ul>
+                    </div>
+                    <div class="solucion-footer">
+                        <a href="#contacto" class="btn btn-outline">CONOCER EL MODELO DE SERVICIOS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         6. BANNER DE IMPACTO / BENEFICIOS
+         ======================================================================== -->
+    <section class="impact-banner">
+        <div class="container">
+            <div class="impact-content">
+                <span class="badge-tag" style="background-color: rgba(212, 154, 43, 0.2); color: var(--gold); border-color: rgba(212, 154, 43, 0.4);">
+                    <i class="fa-solid fa-gem"></i>
+                    <span>Valor Estratégico</span>
+                </span>
+                <h2>CUANDO LA CARTERA MEJORA, <span>EL EDIFICIO TAMBIÉN MEJORA.</span></h2>
+                <p style="color: #CBD5E1; font-size: 17px;">El recaudo efectivo reactiva la vida comunitaria y garantiza la estabilidad operativa de su copropiedad.</p>
+                
+                <ul class="impact-list">
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Más recursos para mantenimiento preventivo y correctivo.</span>
+                    </li>
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Cumplimiento oportuno con proveedores de vigilancia y aseo.</span>
+                    </li>
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Ejecución de proyectos aprobados sin demoras presupuestales.</span>
+                    </li>
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Tranquilidad administrativa y preservación de la sana convivencia.</span>
+                    </li>
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Control transparente con reportes financieros periódicos.</span>
+                    </li>
+                    <li>
+                        <span class="check-circle"><i class="fa-solid fa-check"></i></span>
+                        <span>Protección patrimonial y valorización del metro cuadrado.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         7. MÓDULOS ESPECIALES (ADMINISTRADORES Y PROVEEDORES)
+         ======================================================================== -->
+    <section class="section-padding modulos-section">
+        <div class="container">
+            
+            <!-- Módulo Administradores -->
+            <div class="modulo-box" id="administradores">
+                <div>
+                    <span class="badge-tag">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>Alianza para Administradores</span>
+                    </span>
+                    <h3>Usted administra el edificio.<br><span>Nosotros nos ocupamos de la cartera.</span></h3>
+                    <p>El cobro directo genera desgaste emocional con los residentes y resta tiempo a las tareas estratégicas de la administración. Cobramos PH actúa como su aliado corporativo, blindando su gestión y profesionalizando la cobranza.</p>
+                    <ul class="modulo-checklist">
+                        <li><i class="fa-solid fa-circle-dot"></i> Cero confrontaciones personales con copropietarios o residentes.</li>
+                        <li><i class="fa-solid fa-circle-dot"></i> Respaldo técnico integral en cobranza y gestión prejurídica.</li>
+                        <li><i class="fa-solid fa-circle-dot"></i> Informes ejecutivos listos para Asambleas Ordinarias y Consejos.</li>
+                        <li><i class="fa-solid fa-circle-dot"></i> Asesoría permanente en certificación de deudas y acuerdos de pago.</li>
+                    </ul>
+                    <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>HABLAR CON UN ESPECIALISTA</span>
+                    </a>
+                </div>
+                <div class="modulo-card-visual">
+                    <div class="visual-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h4>Aliado Estratégico</h4>
+                    <p>Su función es coordinar el bienestar y mantenimiento del conjunto. Deje la cobranza en manos de un equipo especializado y transparente.</p>
+                </div>
+            </div>
+
+            <!-- Módulo Red de Proveedores -->
+            <div class="modulo-box reverse" id="proveedores">
+                <div class="modulo-card-visual" style="background: linear-gradient(135deg, #163C7E 0%, #0F2B5C 100%);">
+                    <div class="visual-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4>Ecosistema de Pagos Seguros</h4>
+                    <p>Aseguramos la liquidez para que los contratos de servicios no sufran retrasos ni suspensiones operativas.</p>
+                </div>
+                <div>
+                    <span class="badge-tag">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <span>Red de Proveedores</span>
+                    </span>
+                    <h3>¿Quiere ser parte de nuestra<br><span>Red de Proveedores?</span></h3>
+                    <p>Buscamos y vinculamos a las mejores empresas de vigilancia privada, conserjería, mantenimiento de ascensores, aseo y obras civiles. Articulamos esquemas donde la cartera se traduce en flujo de caja garantizado para sus servicios.</p>
+                    <ul class="modulo-checklist">
+                        <li><i class="fa-solid fa-circle-dot"></i> Pagos oportunos respaldados en esquemas formales de recuperación.</li>
+                        <li><i class="fa-solid fa-circle-dot"></i> Vinculación preferente con edificios y copropiedades de nuestro portafolio.</li>
+                        <li><i class="fa-solid fa-circle-dot"></i> Acuerdos comerciales claros y auditados bajo estrictas normas de cumplimiento.</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">QUIERO SER PROVEEDOR</a>
+                </div>
+            </div>
+
+            <!-- Aclaración conceptual sobre cartera histórica -->
+            <div class="nota-legal-box">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <strong>Aclaración Conceptual y Operativa:</strong> La gestión y adquisición de derechos económicos sobre cartera se realiza previa debida diligencia técnica y financiera, respetando las facultades estatutarias de cada copropiedad. En casos con procesos ejecutivos vigentes o títulos previamente radicados en instancias judiciales, se evalúa la viabilidad técnica para la cesión de derechos o el acompañamiento especializado.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         8. PREGUNTAS FRECUENTES (FAQ ACCORDION)
+         ======================================================================== -->
+    <section class="section-padding faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-tag">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Respuestas Claras</span>
+                </span>
+                <h2 class="section-title">PREGUNTAS FRECUENTES</h2>
+                <p class="section-subtitle">Resolvemos las dudas más habituales de administradores, consejos y proveedores sobre nuestros esquemas de cobranza.</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>¿Qué significa que Cobramos PH adquiere los derechos económicos de la cartera?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Significa que la copropiedad cede a Cobramos PH el derecho de cobro sobre las obligaciones seleccionadas. Esto le permite a la copropiedad recibir su beneficio pactado (en dinero o en servicios) de manera predecible, mientras nosotros asumimos la gestión y el riesgo de la cobranza.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>¿Cómo funciona el PLAN 10% | LIQUIDEZ?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bajo esta modalidad, Cobramos PH evalúa la cartera y adquiere sus derechos económicos. La copropiedad recibe una contraprestación equivalente al 10% según las condiciones contractuales, asegurando liquidez para la copropiedad de forma independiente a la fecha real en que los propietarios efectúen el pago.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>¿Cómo funciona el PLAN 5% + 1% | SERVICIOS?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los derechos económicos de la cartera se convierten en servicios directos para el edificio (mantenimiento, vigilancia, aseo, seguros). La copropiedad obtiene un 5% representado en la prestación de estos servicios a través de proveedores aliados, más un 1% adicional configurado como fondo de reserva.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>¿Qué pasa si los propietarios morosos se demoran en pagar?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La copropiedad no se ve afectada por los tiempos de mora. Al operar mediante la adquisición de derechos económicos, el beneficio acordado para la copropiedad se mantiene según lo estipulado en el contrato, mientras Cobramos PH asume la gestión y el seguimiento.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-question">
+                        <span>¿Qué ocurre con la cartera de años anteriores o propietarios en procesos jurídicos?</span>
+                        <i class="fa-solid fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La cartera histórica o los propietarios con proceso jurídico vigente no entran de forma automática en el modelo estándar. Para estos casos, Cobramos PH realiza una evaluación individual y presenta una propuesta jurídica y comercial a la medida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+         9. FORMULARIO PRINCIPAL DE CONTACTO & FOOTER
+         ======================================================================== -->
+    <section class="section-padding contacto-section" id="contacto">
+        <div class="container">
+            <div class="contacto-grid">
+                
+                <!-- Info Column -->
+                <div class="contacto-info">
+                    <span class="badge-tag">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Diagnóstico Sin Compromiso</span>
+                    </span>
+                    <h2>HABLEMOS DE LA CARTERA DE SU COPROPIEDAD</h2>
+                    <p>Diligencie el formulario y un consultor senior en cobranza se pondrá en contacto para coordinar el diagnóstico inicial de su edificio.</p>
+
+                    <div class="contacto-cards-list">
+                        <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." target="_blank" rel="noopener noreferrer" class="contacto-card-item">
+                            <div class="icon-box">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="lbl">WhatsApp / Celular Oficial</div>
+                                <div class="val">+57 318 196 3751</div>
+                            </div>
+                        </a>
+
+                        <a href="mailto:cartera@cobramosph.com" class="contacto-card-item">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="lbl">Correo Electrónico Oficial</div>
+                                <div class="val">cartera@cobramosph.com</div>
+                            </div>
+                        </a>
+
+                        <a href="https://instagram.com/cobramosphco" target="_blank" rel="noopener noreferrer" class="contacto-card-item">
+                            <div class="icon-box">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <div class="lbl">Instagram Corporativo</div>
+                                <div class="val">@cobramosphco</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-card">
+                    <form id="diagnosticoForm" onsubmit="enviarAWhatsApp(event)">
+                        <div class="form-grid">
+                            
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo *</label>
+                                <input type="text" id="nombre" required placeholder="Ej: Carlos Gómez">
+                            </div>
+
+                            <!-- Cargo -->
+                            <div class="form-group">
+                                <label for="cargo">Cargo *</label>
+                                <select id="cargo" required>
+                                    <option value="" disabled selected>Seleccione su cargo...</option>
+                                    <option value="Administrador">Administrador(a)</option>
+                                    <option value="Miembro Consejo">Miembro de Consejo</option>
+                                    <option value="Propietario">Propietario / Residente</option>
+                                    <option value="Proveedor">Empresa Proveedora</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <!-- Copropiedad -->
+                            <div class="form-group">
+                                <label for="copropiedad">Nombre de la Copropiedad *</label>
+                                <input type="text" id="copropiedad" required placeholder="Ej: Edificio Torres del Parque">
+                            </div>
+
+                            <!-- Ciudad -->
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad *</label>
+                                <input type="text" id="ciudad" required placeholder="Ej: Bogotá, Medellín, Cali...">
+                            </div>
+
+                            <!-- Número de Unidades -->
+                            <div class="form-group">
+                                <label for="unidades">Número de Unidades</label>
+                                <input type="number" id="unidades" placeholder="Ej: 80 unidades">
+                            </div>
+
+                            <!-- Teléfono / WhatsApp -->
+                            <div class="form-group">
+                                <label for="telefono">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="telefono" required placeholder="Ej: 310 123 4567">
+                            </div>
+
+                            <!-- Correo -->
+                            <div class="form-group full">
+                                <label for="correo">Correo Electrónico *</label>
+                                <input type="email" id="correo" required placeholder="admin@micopropiedad.com">
+                            </div>
+
+                            <!-- Valor Cartera -->
+                            <div class="form-group">
+                                <label for="cartera">Valor Aprox. de Cartera</label>
+                                <select id="cartera">
+                                    <option value="Menos de 20M">Menos de $20 Millones</option>
+                                    <option value="20M a 50M" selected>$20M a $50 Millones</option>
+                                    <option value="50M a 100M">$50M a $100 Millones</option>
+                                    <option value="100M a 200M">$100M a $200 Millones</option>
+                                    <option value="Mas de 200M">Más de $200 Millones</option>
+                                </select>
+                            </div>
+
+                            <!-- Solución de Interés -->
+                            <div class="form-group">
+                                <label for="solucion">Solución de Interés</label>
+                                <select id="solucion">
+                                    <option value="Recuperacion">Gestión y Recuperación</option>
+                                    <option value="Liquidez">Cobramos Liquidez (10%)</option>
+                                    <option value="Servicios">Cobramos Servicios (5% + 1%)</option>
+                                    <option value="Proveedor">Quiero ser Proveedor</option>
+                                </select>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="form-group full">
+                                <label for="mensaje">Mensaje o Detalle de la Cartera</label>
+                                <textarea id="mensaje" rows="3" placeholder="Coméntenos brevemente la antigüedad o situación particular..."></textarea>
+                            </div>
+
+                            <!-- Botón Submit -->
+                            <div class="form-group full">
+                                <button type="submit" class="btn btn-gold form-submit-btn">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>SOLICITAR DIAGNÓSTICO GRATUITO</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="form-feedback" class="form-feedback">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>¡Solicitud radicada con éxito! Un especialista de Cobramos PH se comunicará en breve con usted.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Corporativo -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="./assets/logo.jpg" alt="Cobramos PH" onerror="this.src='https://via.placeholder.com/180x50?text=Cobramos+PH'">
+                    </div>
+                    <p>Cobramos PH - Soluciones financieras y de gestión estratégica de cartera en propiedad horizontal. Recuperamos recursos y preservamos la sana convivencia comunitaria.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio"><i class="fa-solid fa-angle-right"></i> Inicio</a></li>
+                        <li><a href="#como-funciona"><i class="fa-solid fa-angle-right"></i> Cómo Funciona</a></li>
+                        <li><a href="#soluciones"><i class="fa-solid fa-angle-right"></i> Soluciones y Modelos</a></li>
+                        <li><a href="#administradores"><i class="fa-solid fa-angle-right"></i> Para Administradores</a></li>
+                        <li><a href="#proveedores"><i class="fa-solid fa-angle-right"></i> Red de Proveedores</a></li>
+                        <li><a href="#faq"><i class="fa-solid fa-angle-right"></i> Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Canales Oficiales</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> +57 318 196 3751
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:cartera@cobramosph.com">
+                                <i class="fa-solid fa-envelope"></i> cartera@cobramosph.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/cobramosphco" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i> @cobramosphco
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    © 2026 Cobramos PH S.A.S. Todos los derechos reservados.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#contacto">Términos del Servicio</a>
+                    <a href="#contacto">Política de Privacidad</a>
+                    <a href="#contacto">Habeas Data</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+         10. BOTÓN FLOTANTE DE WHATSAPP
+         ======================================================================== -->
+    <a href="https://api.whatsapp.com/send?phone=573181963751&text=Hola,%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20de%20cartera%20para%20mi%20copropiedad." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-float" 
+       title="Hablar por WhatsApp con Cobramos PH" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ========================================================================
+         JAVASCRIPT NATIVO (FAQ ACCORDION & FORM SIMULATION)
+         ======================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Acordeón FAQ Interactivo
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const currentItem = this.parentElement;
+                    const isActive = currentItem.classList.contains('active');
+
+                    // Cerrar los demás acordeones para limpieza visual
+                    document.querySelectorAll('.faq-item').forEach(function (item) {
+                        item.classList.remove('active');
+                    });
+
+                    // Si no estaba activo, abrir el actual
+                    if (!isActive) {
+                        currentItem.classList.add('active');
+                    }
+                });
+            });
+
+            // Formulario de Contacto (Simulación con feedback amigable)
+            const contactForm = document.getElementById('contact-form');
+            const feedbackBox = document.getElementById('form-feedback');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>PROCESANDO SOLICITUD...</span>';
+
+                    setTimeout(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        if (feedbackBox) {
+                            feedbackBox.style.display = 'flex';
+                            feedbackBox.style.alignItems = 'center';
+                            feedbackBox.style.justifyContent = 'center';
+                            feedbackBox.style.gap = '8px';
+                            feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                        contactForm.reset();
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // Forzar carga al inicio al recargar la página si no hay hash específico
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+<script>
+function enviarAWhatsApp(event) {
+  event.preventDefault(); // Evita que la página se recargue
+
+  // Captura de valores de los inputs
+  const nombre = document.getElementById('nombre').value;
+  const cargo = document.getElementById('cargo').value;
+  const copropiedad = document.getElementById('copropiedad').value;
+  const ciudad = document.getElementById('ciudad').value;
+  const unidades = document.getElementById('unidades').value || 'No especificado';
+  const telefono = document.getElementById('telefono').value;
+  const correo = document.getElementById('correo').value;
+  const cartera = document.getElementById('cartera').value;
+  const solucion = document.getElementById('solucion').value;
+  const mensaje = document.getElementById('mensaje').value || 'Sin detalles adicionales';
+
+  // Número oficial de destino
+  const numeroWhatsApp = "573181963751";
+
+  // Redacción ordenada del mensaje
+  const textoMensaje = `*NUEVO DIAGNÓSTICO SOLICITADO - COBRAMOS PH*%0A%0A` +
+    `👤 *Nombre:* ${encodeURIComponent(nombre)}%0A` +
+    `💼 *Cargo:* ${encodeURIComponent(cargo)}%0A` +
+    `🏢 *Copropiedad:* ${encodeURIComponent(copropiedad)}%0A` +
+    `📍 *Ciudad:* ${encodeURIComponent(ciudad)}%0A` +
+    `🏠 *Unidades:* ${encodeURIComponent(unidades)}%0A` +
+    `📱 *Teléfono:* ${encodeURIComponent(telefono)}%0A` +
+    `✉️ *Correo:* ${encodeURIComponent(correo)}%0A` +
+    `💰 *Valor Cartera:* ${encodeURIComponent(cartera)}%0A` +
+    `🎯 *Solución de Interés:* ${encodeURIComponent(solucion)}%0A` +
+    `📝 *Detalle/Mensaje:* ${encodeURIComponent(mensaje)}`;
+
+  // Enlace final de redirección
+  const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${textoMensaje}`;
+
+  // Abrir en una nueva pestaña
+  window.open(urlWhatsApp, '_blank');
+}
+</script>
+</body>
+</html>
