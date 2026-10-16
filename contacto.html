@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Bases y Soportes Mendoza - Atención Inmediata en la Costa Caribe</title>
+  <meta name="description" content="Contáctanos para compra, cotización e instalación express de soportes para TV en Barranquilla, Cartagena, Santa Marta, Valledupar, Riohacha, Sincelejo y Montería.">
+
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- ======================================================= -->
+  <!-- CSS NATIVO EMBEBIDO: 100% AUTOCONTENIDO Y SIN DEPENDENCIAS -->
+  <!-- ======================================================= -->
+  <style>
+    /* 1. RESET UNIVERSAL & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary: #FFCC00;
+      --color-primary-hover: #E6B800;
+      --color-bg-body: #0F172A;
+      --color-bg-dark: #090D16;
+      --color-bg-card: #18181B;
+      --color-bg-card-alt: #1E293B;
+      --color-text-white: #FFFFFF;
+      --color-text-muted: #CBD5E1;
+      --color-text-dim: #94A3B8;
+      --color-border: rgba(255, 255, 255, 0.12);
+      --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-bg-body);
+      color: var(--color-text-white);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a, a:visited, a:hover, a:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 2. TOP BAR SUPERIOR */
+    .top-bar {
+      background-color: #0B0F19;
+      border-bottom: 1px solid var(--color-border);
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+
+    .top-bar-content {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .call-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: #000000 !important;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .call-badge:hover {
+      transform: scale(1.04);
+    }
+
+    .call-ping {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #000000;
+      animation: ping 1.5s infinite;
+    }
+
+    @keyframes ping {
+      0% { transform: scale(0.9); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.5; }
+      100% { transform: scale(0.9); opacity: 1; }
+    }
+
+    .schedule-text {
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .schedule-text strong {
+      color: #FFFFFF;
+    }
+
+    /* 3. HEADER & NAVEGACIÓN FLOTANTE */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 14px 20px;
+    }
+
+    .header-content {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #main-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-fallback-text {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .logo-fallback-text span {
+      color: var(--color-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--color-primary);
+    }
+
+    .btn-cta-whatsapp {
+      background-color: var(--color-primary);
+      color: #000000 !important;
+      font-weight: 800;
+      border-radius: 30px;
+      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+      transition: transform 0.2s;
+      font-size: 14px;
+    }
+
+    .btn-cta-whatsapp:hover {
+      transform: scale(1.05);
+      background-color: var(--color-primary-hover);
+    }
+
+    .btn-cta-whatsapp .icon-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: #000000;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: #1E293B;
+      color: #FFFFFF;
+      border: 1px solid var(--color-border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* 4. BANNER HERO CONTACTO */
+    .page-hero {
+      padding: 70px 0 50px;
+      background: radial-gradient(circle at 50% 10%, rgba(255, 204, 0, 0.14) 0%, transparent 60%);
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .page-hero-badge {
+      display: inline-block;
+      background-color: rgba(255, 204, 0, 0.15);
+      color: var(--color-primary);
+      border: 1px solid rgba(255, 204, 0, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-title {
+      font-size: 44px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-title span {
+      color: var(--color-primary);
+    }
+
+    .page-hero-subtitle {
+      font-size: 18px;
+      color: var(--color-text-muted);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    /* 5. SECCIÓN DE CONTACTO: GRID DE CARDS & FORMULARIO */
+    .contacto-section {
+      padding: 70px 0;
+      background-color: var(--color-bg-dark);
+    }
+
+    /* TARJETAS RÁPIDAS SUPERIORES */
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .contact-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 26px 20px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-primary);
+    }
+
+    .card-icon-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: rgba(255, 204, 0, 0.15);
+      border: 1px solid rgba(255, 204, 0, 0.4);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p, .contact-card a {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .contact-card a:hover {
+      color: var(--color-primary);
+    }
+
+    .contact-card .badge-status {
+      margin-top: 12px;
+      background-color: rgba(52, 211, 153, 0.15);
+      color: #34D399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* GRID PRINCIPAL: FORMULARIO + DETALLES DE ATENCIÓN */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* CONTENEDOR DEL FORMULARIO */
+    .form-wrapper {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+
+    .form-header {
+      margin-bottom: 28px;
+    }
+
+    .form-header h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-header p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .form-label span.req {
+      color: var(--color-primary);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background-color: #0F172A;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #FFFFFF;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+    }
+
+    .form-select {
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background-color: #0F172A;
+      color: #FFFFFF;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit-form {
+      width: 100%;
+      background-color: var(--color-primary);
+      color: #000000;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-submit-form:hover {
+      transform: scale(1.02);
+      background-color: var(--color-primary-hover);
+    }
+
+    .form-footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--color-text-dim);
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* COLUMNA LATERAL DE INFORMACIÓN */
+    .info-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-box {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .info-box-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-box-title i {
+      color: var(--color-primary);
+    }
+
+    .phone-channels-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .phone-channel-item {
+      background-color: #0F172A;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+
+    .phone-channel-item:hover {
+      border-color: var(--color-primary);
+    }
+
+    .phone-label {
+      font-size: 12px;
+      color: var(--color-text-dim);
+      display: block;
+    }
+
+    .phone-number {
+      font-size: 15px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .btn-quick-wa {
+      background-color: #25D366;
+      color: #FFFFFF !important;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .btn-quick-wa:hover {
+      transform: scale(1.15);
+    }
+
+    /* BOX DE COBERTURA Y SEDE */
+    .location-box {
+      background: linear-gradient(145deg, #18181B 0%, #1E293B 100%);
+      border: 1px solid rgba(255, 204, 0, 0.3);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .location-address {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .location-detail {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-bottom: 18px;
+    }
+
+    .btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0F172A;
+      color: var(--color-primary) !important;
+      border: 1px solid var(--color-primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn-maps:hover {
+      background-color: var(--color-primary);
+      color: #000000 !important;
+    }
+
+    .cities-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .city-badge-small {
+      background-color: #0B0F19;
+      color: var(--color-text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .city-badge-small.principal {
+      background-color: var(--color-primary);
+      color: #000000;
+      font-weight: 900;
+    }
+
+    /* 6. FOOTER EN 3 COLUMNAS */
+    .footer {
+      background-color: #070B12;
+      border-top: 1px solid var(--color-border);
+      padding: 60px 0 30px;
+      color: var(--color-text-muted);
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-col-title {
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      color: #000000 !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-right: 10px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .social-btn:hover {
+      background-color: var(--color-primary);
+      transform: scale(1.1);
+    }
+
+    .footer-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-list i {
+      color: var(--color-primary);
+      margin-top: 3px;
+    }
+
+    .footer-list a {
+      color: #FFFFFF;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-list a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 13px;
+      color: var(--color-text-dim);
+    }
+
+    /* 7. WIDGET FLOTANTE WHATSAPP */
+    .floating-whatsapp-widget {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      background-color: #0F172A;
+      border: 2px solid var(--color-primary);
+      color: #FFFFFF !important;
+      border-radius: 35px;
+      padding: 10px 18px 10px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(255, 204, 0, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .floating-whatsapp-widget:hover {
+      transform: scale(1.05);
+      background-color: #1E293B;
+    }
+
+    .whatsapp-circle-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    /* 8. RESPONSIVE DESIGN */
+    @media (max-width: 992px) {
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-wrapper {
+        padding: 24px;
+      }
+      .page-hero-title {
+        font-size: 30px;
+      }
+      .top-bar-content {
+        justify-content: center;
+        text-align: center;
+      }
+      .floating-whatsapp-widget span {
+        display: none;
+      }
+      .floating-whatsapp-widget {
+        padding: 10px;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================== -->
+  <!-- 1. TOP BAR SUPERIOR -->
+  <!-- ================================================== -->
+  <aside class="top-bar" aria-label="Información rápida">
+    <div class="top-bar-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="tel:+573008007183" class="call-badge">
+          <span class="call-ping"></span>
+          <i class="fa-solid fa-phone" style="font-size: 11px;"></i>
+          <span>¡Llama Ya! +57 300 800 7183</span>
+        </a>
+        <span style="color: var(--color-text-dim); margin-left: 6px;">| Atención Express en la Costa Caribe</span>
+      </div>
+
+      <div class="schedule-text">
+        <i class="fa-regular fa-clock" style="color: var(--color-primary);"></i>
+        <span>HORARIO DE ATENCIÓN: <strong>7.00 AM – 9.00PM</strong> (Lunes a Domingo)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================================================== -->
+  <!-- 2. HEADER & NAVEGACIÓN -->
+  <!-- ================================================== -->
+  <header class="header">
+    <div class="header-content">
+      
+      <!-- LOGO OFICIAL CON FALLBACK A TEXTO -->
+      <a href="index.html" class="logo-container">
+        <img src="logo.png" 
+             id="main-logo" 
+             alt="Soportes Mendoza Logo" 
+             onerror="this.onerror=null; this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+        
+        <div id="logo-fallback" class="logo-fallback-text" style="display: none; align-items: center; gap: 10px;">
+          <div style="background-color: var(--color-primary); color: #000; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+            <i class="fa-solid fa-tv"></i>
+          </div>
+          <div>SOPORTES <span>MENDOZA</span></div>
+        </div>
+      </a>
+
+      <!-- ENLACES DE NAVEGACIÓN -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">INICIO</a>
+        <a href="index.html#productos" class="nav-link">PRODUCTOS</a>
+        <a href="nosotros.html" class="nav-link">NOSOTROS</a>
+        <a href="contacto.html" class="nav-link active">CONTACTO</a>
+      </nav>
+
+      <!-- BOTÓN CTA WHATSAPP -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="https://wa.me/573008007183?text=Hola%20Soportes%20Mendoza%2C%20quisiera%20solicitar%20asesor%C3%ADa%20inmediata" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-cta-whatsapp">
+          <span>Cotizar por WhatsApp</span>
+          <div class="icon-circle">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-toggle-btn" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL DESPLEGABLE -->
+  <div id="mobile-dropdown" style="display: none; background: #0B0F19; border-bottom: 1px solid var(--color-border); padding: 15px 20px;">
+    <a href="index.html" style="display: block; padding: 10px 0; font-weight: 700; color: #FFFFFF;">INICIO</a>
+    <a href="index.html#productos" style="display: block; padding: 10px 0; font-weight: 700; color: #FFFFFF;">PRODUCTOS</a>
+    <a href="nosotros.html" style="display: block; padding: 10px 0; font-weight: 700; color: #FFFFFF;">NOSOTROS</a>
+    <a href="contacto.html" style="display: block; padding: 10px 0; font-weight: 700; color: var(--color-primary);">CONTACTO</a>
+  </div>
+
+  <main>
+    <!-- ================================================== -->
+    <!-- 3. BANNER HERO CONTACTO -->
+    <!-- ================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-badge"><i class="fa-solid fa-headset"></i> Canales de Atención Directa</div>
+        <h1 class="page-hero-title">CONTÁCTANOS - <span>ATENCIÓN INMEDIATA</span></h1>
+        <p class="page-hero-subtitle">
+          Cotiza tu soporte, agenda tu instalación técnica en menos de 2 horas o recibe asesoría especializada en toda la Costa Caribe.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- 4. CONTENIDO CONTACTO -->
+    <!-- ================================================== -->
+    <section class="contacto-section">
+      <div class="container">
+
+        <!-- CUADRÍCULA DE 4 TARJETAS DIRECTAS -->
+        <div class="contact-cards-grid">
+          
+          <!-- TARJETA 1: WHATSAPP PRINCIPAL -->
+          <div class="contact-card">
+            <div class="card-icon-circle">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp Oficial</h3>
+            <p style="margin-bottom: 6px;">Atención rápida y cotización de soportes.</p>
+            <a href="https://wa.me/573008007183" target="_blank" style="font-weight: 800; color: var(--color-primary); font-size: 15px;">
+              +57 300 800 7183
+            </a>
+            <div class="badge-status">
+              <i class="fa-solid fa-circle" style="font-size: 7px;"></i> Asesores Conectados
+            </div>
+          </div>
+
+          <!-- TARJETA 2: LÍNEAS TELEFÓNICAS -->
+          <div class="contact-card">
+            <div class="card-icon-circle">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <h3>Llamadas Directas</h3>
+            <p style="margin-bottom: 6px;">Comunícate directamente a nuestras líneas:</p>
+            <div style="font-weight: 700; font-size: 13px;">
+              <a href="tel:+573145242107">+57 314 524 2107</a><br>
+              <a href="tel:+573153780217">+57 315 378 0217</a>
+            </div>
+            <div class="badge-status">
+              <i class="fa-solid fa-bolt" style="font-size: 9px;"></i> Respuesta Inmediata
+            </div>
+          </div>
+
+          <!-- TARJETA 3: CORREO ELECTRÓNICO -->
+          <div class="contact-card">
+            <div class="card-icon-circle">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h3>Correo Corporativo</h3>
+            <p style="margin-bottom: 6px;">Cotizaciones a empresas y licitaciones:</p>
+            <a href="mailto:ventas@soportesmendoza.com" style="font-weight: 800; color: #FFFFFF; font-size: 13px; word-break: break-all;">
+              ventas@soportesmendoza.com
+            </a>
+            <div class="badge-status" style="color: #60A5FA; background-color: rgba(96,165,250,0.15); border-color: rgba(96,165,250,0.3);">
+              <i class="fa-solid fa-file-invoice" style="font-size: 9px;"></i> Facturación Electrónica
+            </div>
+          </div>
+
+          <!-- TARJETA 4: HORARIOS -->
+          <div class="contact-card">
+            <div class="card-icon-circle">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>Horario de Atención</h3>
+            <p style="margin-bottom: 6px;">Lunes a Domingo continuo:</p>
+            <div style="font-weight: 800; color: var(--color-primary); font-size: 14px;">
+              7:00 AM – 9:00 PM
+            </div>
+            <div class="badge-status">
+              <i class="fa-solid fa-calendar-check" style="font-size: 9px;"></i> Fines de Semana Activo
+            </div>
+          </div>
+
+        </div>
+
+        <!-- GRID PRINCIPAL: FORMULARIO INTERACTIVO + INFORMACIÓN LATERAL -->
+        <div class="contact-main-grid">
+
+          <!-- COLUMNA IZQUIERDA: FORMULARIO CON ENVÍO DIRECTO A WHATSAPP -->
+          <div class="form-wrapper">
+            <div class="form-header">
+              <h2><i class="fa-solid fa-paper-plane" style="color: var(--color-primary);"></i> Envíanos tu Solicitud</h2>
+              <p>Diligencia el formulario y nuestro equipo procesará tu cotización de inmediato por WhatsApp.</p>
+            </div>
+
+            <form id="contact-form">
+              
+              <div class="form-row">
+                <!-- NOMBRE COMPLETO -->
+                <div class="form-group">
+                  <label for="form-nombre" class="form-label">Nombre Completo <span class="req">*</span></label>
+                  <input type="text" id="form-nombre" class="form-input" placeholder="Ej. Carlos Mendoza" required>
+                </div>
+
+                <!-- TELÉFONO / WHATSAPP -->
+                <div class="form-group">
+                  <label for="form-telefono" class="form-label">Teléfono o WhatsApp <span class="req">*</span></label>
+                  <input type="tel" id="form-telefono" class="form-input" placeholder="Ej. 300 123 4567" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <!-- CIUDAD -->
+                <div class="form-group">
+                  <label for="form-ciudad" class="form-label">Ciudad de Atención <span class="req">*</span></label>
+                  <select id="form-ciudad" class="form-select" required>
+                    <option value="" disabled selected>Selecciona tu ciudad...</option>
+                    <option value="Barranquilla">Barranquilla (Sede Principal)</option>
+                    <option value="Cartagena">Cartagena</option>
+                    <option value="Santa Marta">Santa Marta</option>
+                    <option value="Valledupar">Valledupar</option>
+                    <option value="Riohacha">Riohacha</option>
+                    <option value="Sincelejo">Sincelejo</option>
+                    <option value="Montería">Montería</option>
+                    <option value="Otra Ciudad Costa">Otra localidad Costa Caribe</option>
+                  </select>
+                </div>
+
+                <!-- SERVICIO REQUERIDO -->
+                <div class="form-group">
+                  <label for="form-servicio" class="form-label">Soporte o Servicio <span class="req">*</span></label>
+                  <select id="form-servicio" class="form-select" required>
+                    <option value="" disabled selected>Selecciona un soporte...</option>
+                    <option value="Soporte Fijo (19 a 85+) pulg">Soporte Fijo (19" a 85"+)</option>
+                    <option value="Soporte Giratorio / Articulado">Soporte Giratorio / Articulado</option>
+                    <option value="Soporte de Pedestal / Móvil">Soporte de Pedestal / Móvil</option>
+                    <option value="Soporte Aéreo de Techo">Soporte Aéreo de Techo</option>
+                    <option value="Soporte para Monitor (Doble/Sencillo)">Soporte para Monitor (Doble/Sencillo)</option>
+                    <option value="Soporte Video Beam">Soporte Video Beam</option>
+                    <option value="Repisas Flotantes">Repisas Flotantes de Vidrio/Metal</option>
+                    <option value="Promoción Kit Soporte + Repisa + Instalación">Promoción Kit Completo + Instalación</option>
+                    <option value="Solo Servicio de Instalación">Solo Servicio de Instalación Express</option>
+                    <option value="Asesoría General">Asesoría General</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- PULGADAS DEL TELEVISOR / MARCA -->
+              <div class="form-group">
+                <label for="form-pulgadas" class="form-label">Pulgadas del TV / Modelo (Opcional)</label>
+                <input type="text" id="form-pulgadas" class="form-input" placeholder="Ej. Samsung 55 pulgadas o LG OLED 65''">
+              </div>
+
+              <!-- MENSAJE O DIRECCIÓN -->
+              <div class="form-group">
+                <label for="form-mensaje" class="form-label">Mensaje adicional o Barrio / Dirección</label>
+                <textarea id="form-mensaje" class="form-textarea" placeholder="Indícanos detalles como el tipo de pared (concreto o drywall), urgencia de instalación, o preguntas específicas..."></textarea>
+              </div>
+
+              <!-- BOTÓN SUBMIT WHATSAPP -->
+              <button type="submit" class="btn-submit-form" id="btn-submit">
+                <i class="fa-brands fa-whatsapp" style="font-size: 22px;"></i>
+                <span>Enviar Solicitud por WhatsApp</span>
+              </button>
+
+              <div class="form-footer-note">
+                <i class="fa-solid fa-shield-halved" style="color: #34D399;"></i>
+                <span>Tus datos son 100% seguros y recibirás respuesta en menos de 5 minutos.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- COLUMNA DERECHA: INFORMACIÓN DETALLADA, SEDE & COBERTURA -->
+          <div class="info-sidebar">
+            
+            <!-- CAJA DE LÍNEAS TELEFÓNICAS DIRECTAS -->
+            <div class="info-box">
+              <h3 class="info-box-title">
+                <i class="fa-solid fa-headset"></i> Líneas de Contacto Directo
+              </h3>
+              
+              <div class="phone-channels-list">
+                <!-- LÍNEA 1 -->
+                <div class="phone-channel-item">
+                  <div>
+                    <span class="phone-label">LÍNEA PRINCIPAL & WHATSAPP:</span>
+                    <span class="phone-number">+57 300 800 7183</span>
+                  </div>
+                  <a href="https://wa.me/573008007183?text=Hola%20Soportes%20Mendoza%2C%20necesito%20atenci%C3%B3n%20inmediata" target="_blank" class="btn-quick-wa" title="Escribir por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </div>
+
+                <!-- LÍNEA 2 -->
+                <div class="phone-channel-item">
+                  <div>
+                    <span class="phone-label">LÍNEA SECUNDARIA:</span>
+                    <span class="phone-number">+57 314 524 2107</span>
+                  </div>
+                  <a href="https://wa.me/573145242107?text=Hola%20Soportes%20Mendoza%2C%20quisiera%20cotizar%20un%20soporte" target="_blank" class="btn-quick-wa" title="Escribir por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </div>
+
+                <!-- LÍNEA 3 -->
+                <div class="phone-channel-item">
+                  <div>
+                    <span class="phone-label">VENTAS & ASISTENCIA TÉCNICA:</span>
+                    <span class="phone-number">+57 315 378 0217</span>
+                  </div>
+                  <a href="https://wa.me/573153780217?text=Hola%20Soportes%20Mendoza%2C%20necesito%20asistencia%20t%C3%A9cnica" target="_blank" class="btn-quick-wa" title="Escribir por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CAJA DE SEDE PRINCIPAL -->
+            <div class="location-box">
+              <h3 class="info-box-title">
+                <i class="fa-solid fa-building"></i> Sede Principal Barranquilla
+              </h3>
+              <div class="location-address">
+                Cra. 10 #45C1-16, Barrio La Victoria
+              </div>
+              <p class="location-detail">
+                Barranquilla, Atlántico - Colombia.<br>
+                Centro de distribución, fabricación y despacho inmediato de técnicos instaladores.
+              </p>
+
+              <a href="https://maps.google.com/?q=Cra.+10+%2345C1-16,+Barrio+La+Victoria,+Barranquilla" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-maps">
+                <i class="fa-solid fa-location-arrow"></i>
+                <span>Ver en Google Maps</span>
+              </a>
+
+              <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+              <h4 style="font-size: 13px; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">
+                Ciudades con Cobertura Express:
+              </h4>
+
+              <div class="cities-chips">
+                <span class="city-badge-small principal">Barranquilla</span>
+                <span class="city-badge-small">Cartagena</span>
+                <span class="city-badge-small">Santa Marta</span>
+                <span class="city-badge-small">Valledupar</span>
+                <span class="city-badge-small">Riohacha</span>
+                <span class="city-badge-small">Sincelejo</span>
+                <span class="city-badge-small">Montería</span>
+              </div>
+            </div>
+
+            <!-- CAJA DE PROMESA DE INSTALACIÓN -->
+            <div style="background-color: rgba(255, 204, 0, 0.08); border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-primary); color: #000; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+              </div>
+              <div>
+                <div style="font-weight: 900; color: var(--color-primary); font-size: 14px; margin-bottom: 2px;">
+                  ¡INSTALACIÓN EN 2 HORAS O MENOS!
+                </div>
+                <div style="font-size: 12px; color: var(--color-text-muted);">
+                  Técnicos certificados con herramientas profesionales y tornillería de alta fijación listos para ir a tu domicilio hoy mismo.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================== -->
+  <!-- 5. FOOTER INSTITUCIONAL -->
+  <!-- ================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- COLUMNA 1: SÍGUENOS Y ENCUÉNTRANOS -->
+        <div>
+          <h3 class="footer-col-title">¡SÍGUENOS!</h3>
+          <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+
+          <h4 style="font-size: 14px; font-weight: 800; color: var(--color-primary); margin-bottom: 8px;">ENCUÉNTRANOS:</h4>
+          <p style="font-size: 13px; line-height: 1.6;">
+            Atendemos en las principales ciudades de la costa caribe colombiana. Adquiere tus soportes en <strong style="color: #FFFFFF;">Barranquilla, Cartagena, Santa Marta, Valledupar, Riohacha, Sincelejo y Montería.</strong>
+          </p>
+        </div>
+
+        <!-- COLUMNA 2: NOSOTROS -->
+        <div>
+          <h3 class="footer-col-title">NOSOTROS</h3>
+          <p style="font-size: 13px; line-height: 1.7; margin-bottom: 16px;">
+            Somos especialistas en la fabricación, venta e instalación de soportes para Televisión y otros electrodomésticos, con la mejor calidad brindando seguridad y tranquilidad a nuestros clientes.
+          </p>
+          <ul class="footer-list" style="font-size: 12px; font-weight: 700;">
+            <li><i class="fa-solid fa-check"></i> <a href="nosotros.html">20 Años en la Industria Metalmecánica</a></li>
+            <li><i class="fa-solid fa-check"></i> <a href="index.html#productos">Instalaciones Express en 2 horas o menos</a></li>
+            <li><i class="fa-solid fa-check"></i> <a href="nosotros.html">Garantía oficial directa por 5 años</a></li>
+            <li><i class="fa-solid fa-check"></i> <a href="contacto.html">Atención inmediata en la Costa Caribe</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMNA 3: CONTÁCTANOS -->
+        <div>
+          <h3 class="footer-col-title">CONTÁCTANOS</h3>
+          <ul class="footer-list">
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span style="font-size: 11px; color: var(--color-text-dim); display: block;">Correo Electrónico:</span>
+                <a href="mailto:ventas@soportesmendoza.com">ventas@soportesmendoza.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+              <div>
+                <span style="font-size: 11px; color: var(--color-text-dim); display: block;">Líneas WhatsApp:</span>
+                <a href="https://wa.me/573008007183" target="_blank" style="color: var(--color-primary); font-weight: 800;">+57 300 800 7183</a><br>
+                <a href="https://wa.me/573145242107" target="_blank">+57 314 524 2107</a><br>
+                <a href="https://wa.me/573153780217" target="_blank">+57 315 378 0217</a>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span style="font-size: 11px; color: var(--color-text-dim); display: block;">Sede Principal:</span>
+                <span style="color: #FFFFFF;">Cra. 10 #45C1-16, Barrio La Victoria, Barranquilla.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 BASES Y SOPORTES MENDOZA. Todos los derechos reservados. Industria Colombiana.</div>
+        <div>
+          <span style="color: #34D399;">● Atención Express Activa</span> • 
+          <a href="contacto.html" style="color: var(--color-primary); font-weight: 700;">Volver Arriba ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================== -->
+  <!-- 6. WIDGET FLOTANTE DE WHATSAPP -->
+  <!-- ================================================== -->
+  <aside aria-label="WhatsApp flotante">
+    <a href="https://wa.me/573008007183?text=Hola%20Soportes%20Mendoza%2C%20necesito%20atenci%C3%B3n%20inmediata" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-whatsapp-widget">
+      <span>¿Cómo puedo ayudarte?</span>
+      <div class="whatsapp-circle-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+    </a>
+  </aside>
+
+  <!-- ================================================== -->
+  <!-- 7. JAVASCRIPT: VALIDACIÓN & ENVÍO A WHATSAPP -->
+  <!-- ================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menú móvil
+      const mobileBtn = document.getElementById('mobile-toggle-btn');
+      const mobileDropdown = document.getElementById('mobile-dropdown');
+      if (mobileBtn && mobileDropdown) {
+        mobileBtn.addEventListener('click', () => {
+          mobileDropdown.style.display = mobileDropdown.style.display === 'none' ? 'block' : 'none';
+        });
+      }
+
+      // Procesador de Formulario interactivo
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const nombre = document.getElementById('form-nombre').value.trim();
+          const telefono = document.getElementById('form-telefono').value.trim();
+          const ciudad = document.getElementById('form-ciudad').value;
+          const servicio = document.getElementById('form-servicio').value;
+          const pulgadas = document.getElementById('form-pulgadas').value.trim();
+          const mensaje = document.getElementById('form-mensaje').value.trim();
+
+          if (!nombre || !telefono || !ciudad || !servicio) {
+            alert('Por favor completa todos los campos requeridos (*).');
+            return;
+          }
+
+          // Armar mensaje estructurado para WhatsApp
+          let textoMensaje = `¡Hola Soportes Mendoza! Deseo solicitar cotización e instalación:\n\n`;
+          textoMensaje += `👤 *Nombre:* ${nombre}\n`;
+          textoMensaje += `📱 *Teléfono/WhatsApp:* ${telefono}\n`;
+          textoMensaje += `📍 *Ciudad:* ${ciudad}\n`;
+          textoMensaje += `🔧 *Soporte/Servicio:* ${servicio}\n`;
+          if (pulgadas) {
+            textoMensaje += `📺 *Pulgadas/Modelo TV:* ${pulgadas}\n`;
+          }
+          if (mensaje) {
+            textoMensaje += `💬 *Detalles adicionales:* ${mensaje}\n`;
+          }
+          textoMensaje += `\n_Enviado desde el formulario web de Soportes Mendoza._`;
+
+          const urlWhatsApp = `https://wa.me/573008007183?text=${encodeURIComponent(textoMensaje)}`;
+          
+          // Abrir WhatsApp en pestaña nueva
+          window.open(urlWhatsApp, '_blank');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
